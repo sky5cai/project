@@ -21,3 +21,13 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+target/classes/cn/ImgsToPdf.class
+target/classes/cn/ImgsToPdf.class
+target/classes/cn/JsoupTest.class
+*.class
+*.class
+*.class
+*.class
+target/classes/cn/ImgsToPdf.class
+target/classes/cn/JsoupTest.class
+target/classes/cn/PrintToPdfUtil.class
