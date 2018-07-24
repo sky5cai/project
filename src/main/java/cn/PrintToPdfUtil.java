@@ -19,7 +19,7 @@ import com.lowagie.text.Rectangle;
 import com.lowagie.text.pdf.PdfWriter;
 //此类将图片集合合并成pdf文件
 public class PrintToPdfUtil {
-
+    //开始转pdf
     public static void toPdf(String imageFolderPath, String pdfPath) {
         try {
             // 图片文件夹地址
