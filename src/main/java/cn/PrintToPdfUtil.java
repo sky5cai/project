@@ -3,7 +3,6 @@ package cn;
 import java.io.FileOutputStream;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +17,7 @@ import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
 import com.lowagie.text.Rectangle;
 import com.lowagie.text.pdf.PdfWriter;
-
+//此类将图片集合合并成pdf文件
 public class PrintToPdfUtil {
 
     public static void toPdf(String imageFolderPath, String pdfPath) {
@@ -48,6 +47,7 @@ public class PrintToPdfUtil {
                  ) {
                 filelist.add(fileTemp);
             }
+            //进行排序
             Collections.sort(filelist, new Comparator<File>() {
 
                 public int compare(File o1, File o2) {
@@ -90,6 +90,7 @@ public class PrintToPdfUtil {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
         long time1 = System.currentTimeMillis();
         toPdf("E:\\img", "E:/hebing.pdf");
