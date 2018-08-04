@@ -3,16 +3,18 @@ package cn;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Test;
+import util.ImageUtils;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.net.URLConnection;
+import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * @Author:zhancai
+ * @Description:
+ * @Date:Created   2018/8/4
+ * @Modified by
+ */
 public class JsoupTest {
 
     @Test
@@ -27,7 +29,7 @@ public class JsoupTest {
     @Test
     //得到漫画的浏览地址进行解析，这里正则表达式拿去出来，拼成图片链接
     public void test2() throws Exception{
-        Document doc= Jsoup.connect("http://www.ccdm1.com/manhua/18596/143507.html?p=1").get();
+        Document doc= Jsoup.connect("http://www.ccdm1.com/manhua/6725/44852.html?p=7").get();
         String html = doc.html();
 //        System.out.println(html);
         Pattern pa=Pattern.compile("\".*jpg\"");
@@ -51,31 +53,19 @@ public class JsoupTest {
              ) {
             String imgHtml=preHtml+temp;
             System.out.println(imgHtml);
-            getPic(imgHtml,String.valueOf(count++));
+            ImageUtils.getPic(imgHtml,String.valueOf(count++));
         }
 
     }
 
 
-    //得到图片地址，和图片的名称，这里默认保存到e://img文件里
-    public static void getPic(String url1,String fileName) throws IOException {
-        // 构造URL
-        URL url = new URL(url1);
-        // 打开URL连接
-        URLConnection con = url.openConnection();
-        // 得到URL的输入流
-        InputStream input = con.getInputStream();
-        // 设置数据缓冲
-        byte[] bs = new byte[1024 * 2];
-        // 读取到的数据长度
-        int len;
-        // 输出的文件流保存图片至本地
 
-        OutputStream os = new FileOutputStream("E:\\img\\"+fileName+".jpg");
-        while ((len = input.read(bs)) != -1) {
-            os.write(bs, 0, len);
-        }
-        os.close();
-        input.close();
+    @Test
+    public void getPicTest() throws IOException {
+        String url="https://mhpic.samanlehua.com/comic/M%2F%E6%A2%A6%E6%AF%94%E4%BC%98%E6%96%AF%E5%A5%A5%E7%89%B9%E6%9B%BC%E5%A4%96%E4%BC%A0%2F%E7%AC%AC2%E9%83%A801%2F17.jpg-noresize.webp";
+        String fileName="a";
+        ImageUtils.getPic(url,fileName);
     }
+
+
 }
