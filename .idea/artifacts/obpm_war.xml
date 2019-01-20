@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="obpm:war">
+    <output-path>C:/project/njkm/obpm/target</output-path>
+    <root id="archive" name="obpm.war">
+      <element id="artifact" artifact-name="obpm:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: jai_code:jai_code:1.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jai_code/jai_code/1.0/jai_code-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/jai_code/jai_code/1.0/jai_code-1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/jai_code/jai_code/1.0/jai_code-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="obpm" />
         <module name="project" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="obpm" target="1.7" />
       <module name="project" target="1.5" />
     </bytecodeTargetLevel>
   </component>

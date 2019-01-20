@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: nanocontainer:nanocontainer-nanowar:1.0-20051010.000410">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/nanocontainer/nanocontainer-nanowar/1.0-20051010.000410/nanocontainer-nanowar-1.0-20051010.000410.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/nanocontainer/nanocontainer-nanowar/1.0-20051010.000410/nanocontainer-nanowar-1.0-20051010.000410-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/nanocontainer/nanocontainer-nanowar/1.0-20051010.000410/nanocontainer-nanowar-1.0-20051010.000410-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

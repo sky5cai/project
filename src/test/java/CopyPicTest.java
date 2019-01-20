@@ -13,6 +13,6 @@ public class CopyPicTest {
 
     @Test
     public void copyPic() throws IOException {
-        ImageUtils.getPicByFilePath("F:\\我的坚果云\\1.jpg",5);
+        ImageUtils.getPicByFilePath("F:\\我的坚果云\\1.jpg",50);
     }
 }
