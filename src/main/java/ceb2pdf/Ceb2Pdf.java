@@ -4,9 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import org.junit.Test;
-import org.xvolks.jnative.Convention;
-import org.xvolks.jnative.JNative;
-import org.xvolks.jnative.Type;
+
 
 
 /**
@@ -19,12 +17,12 @@ public class Ceb2Pdf  {
     private static String c2pUrl = "";
 
     private static void c2pUrlInit() {
-        ClassLoader classLoader = Ceb2Pdf.class.getClassLoader();
+        /*ClassLoader classLoader = Ceb2Pdf.class.getClassLoader();
         c2pUrl = classLoader.getResource("c2p_dll.dll").getPath();
         File file = new File(c2pUrl);
         // if(System.getProperty("os.name").startsWith("win") ||
         // System.getProperty("os.name").startsWith("Win")){
-        c2pUrl = file.getAbsolutePath();
+        c2pUrl = file.getAbsolutePath();*/
         // }
     }
 
@@ -37,7 +35,7 @@ public class Ceb2Pdf  {
      * @return 列内容的字符串
      * @throws Throwable
      */
-    public static String ceb2Pdf(String path) throws Throwable {
+    /*public static String ceb2Pdf(String path) throws Throwable {
         String fileName = "";
         String solutionPath = "e:\\";
         // 如果不是windows系统，不做pdf转换,直接返回。ceb转pdf只支持Windows系统
@@ -63,11 +61,11 @@ public class Ceb2Pdf  {
         f_xxx.setParameter(0, Type.STRING, cebName);
         f_xxx.invoke();
         return pdfName;
-    }
+    }*/
 
-    @Test
+   /* @Test
     public void test1() throws Throwable{
         Ceb2Pdf ceb2pdf=new Ceb2Pdf();
         ceb2pdf.ceb2Pdf("e:\\abc.ceb");
-    }
+    }*/
 }
