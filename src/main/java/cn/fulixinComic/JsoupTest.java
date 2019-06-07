@@ -8,6 +8,7 @@ import org.junit.Test;
 import util.ImageUtils;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -48,6 +49,11 @@ public class JsoupTest {
             System.out.println(headline.toString());
             String aImgUrl = headline.attr("href");
             System.out.println(aImgUrl);
+
+            String lastSpilt = aImgUrl.substring(aImgUrl.lastIndexOf("/")+1,aImgUrl.length()-1);
+            String encodeLastSpilt = URLEncoder.encode(lastSpilt,"utf-8");
+            aImgUrl = aImgUrl.replace(lastSpilt,encodeLastSpilt);
+
             imgUrlList.add(aImgUrl);
         }
 
@@ -84,11 +90,16 @@ public class JsoupTest {
             System.out.println(headline.toString());
             String aImgUrl = headline.attr("href");
             System.out.println(aImgUrl);
+
+            String lastSpilt = aImgUrl.substring(aImgUrl.lastIndexOf("/")+1,aImgUrl.length()-1);
+            String encodeLastSpilt = URLEncoder.encode(lastSpilt,"utf-8");
+            aImgUrl = aImgUrl.replace(lastSpilt,encodeLastSpilt);
+
             imgUrlList.add(aImgUrl);
         }
         //继续寻找下一页
         //如果第一页和最后一页连接相等，则不执行listImage
-        if(!elements.get(0).attr("href").equals(elements.get(elements.size()-1).attr("href")) || elements.get(elements.size()-1).attr("href").contains("pxtt-002") ){
+        if(!elements.get(0).attr("href").equals(elements.get(elements.size()-1).attr("href")) || elements.get(elements.size()-1).attr("href").contains("002") ){
             listImage(nextPageUrl,imgUrlList);
         }
     }
@@ -97,8 +108,12 @@ public class JsoupTest {
 
     @Test
     public void getPicTest() throws IOException {
-        String url="https://image.zsh8.com/uploads/2019/02/12-il0.jpg";
-        String fileName="a";
+        String url="https://image.zsh8.com/uploads/2017/11/07_已压缩-cot.jpg";
+        String lastSpilt = url.substring(url.lastIndexOf("/")+1,url.length()-1);
+        System.out.println(lastSpilt);
+        String encodeLastSpilt = URLEncoder.encode(lastSpilt,"utf-8");
+        url = url.replace(lastSpilt,encodeLastSpilt);
+        String fileName="99999";
         ImageUtils.getPic(url,fileName);
     }
 
