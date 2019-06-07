@@ -20,7 +20,7 @@ public class JsoupTest {
     @Test
     //jsoup拿去连接测试
     public void test1() throws IOException {
-        Document doc= Jsoup.connect("http://www.ccdm1.com/manhua/9496/68239.html").get();
+        Document doc= Jsoup.connect("http://www.ccdm10.com/manhua/14086/109598.html?p=1").get();
         String html = doc.html();
         System.out.println(html);
     }
@@ -31,7 +31,16 @@ public class JsoupTest {
     public void test2() throws Exception{
         //http://www.ccdm9.com/manhua/5776/163748.html?p=4
         //http://www.ccdm1.com/manhua/6725/44852.html?p=7
-        Document doc= Jsoup.connect("http://www.ccdm9.com/manhua/10271/75878.html?p=10").get();
+
+        //cc comic
+//        String url = "http://www.ccdm10.com/manhua/5319/25461.html?p=1";
+//        String imgPreHtml = "http://ccimg.ufo001.com";
+
+        //福利漫画
+        String url = "https://manhua.zsh8.com/pxtt/pxtt-001/25712.html";
+        String imgPreHtml = "";
+
+        Document doc= Jsoup.connect(url).get();
         String html = doc.html();
 //        System.out.println(html);
         Pattern pa=Pattern.compile("\".*jpg\"");
@@ -49,10 +58,10 @@ public class JsoupTest {
         //去掉后的数组
         System.out.println(strArray[1]);
 
-        String preHtml="http://img.danmeiwo.com";
+//        String preHtml="http://img.danmeiwo.com";
+        String preHtml=imgPreHtml;
         int count=1;
-        for (String temp:strArray
-             ) {
+        for (String temp:strArray) {
             String imgHtml=preHtml+temp;
             System.out.println(imgHtml);
             ImageUtils.getPic(imgHtml,String.valueOf(count++));
